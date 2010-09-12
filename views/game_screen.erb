@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title><%= $current %></title>
+	<style type="text/css" media="screen">
+		
+		body {
+			background: #000;
+    }
+    
+    div#background {
+			position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%
+    }
+
+		div#background img {
+		  	
+			/* Set up proportionate scaling */
+			width: auto;
+			height: 100%;
+			
+			/* Set up positioning */
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+		
+		div#content {
+			/* This is the only important rule */
+			/* We need our content to show up on top of the background */
+			position: relative; 
+			
+			/* These have no effect on the functionality */
+			width: 400px;
+			margin: 0 auto;
+			background: #fff;
+			padding: 20px;
+			font-family: helvetica, arial, sans-serif;
+			font-size: 12pt;
+			line-height: 14pt;
+			-moz-box-shadow: #000 4px 4px 10px;
+			-webkit-box-shadow: #000 4px 4px 10px;	
+    }
+		
+	</style>
+</head>
+
+<body>
+<div id="background">
+  <img src="<%= $pie.current_image %>" />
+</div>
+<div id="content">
+  <p><%= $pie.current_description %></p>
+  <p>
+  <% $pie.places[$current].links.each do |place_name, label| %>
+    <%= "  <a href='#{place_name}'>#{label.to_s}</a>  "  %>
+  <% end %>
+  </p>
+</div>
+</body>
+
+</html>
