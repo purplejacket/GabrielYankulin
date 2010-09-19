@@ -1,0 +1,12 @@
+
+template :game_screen
+
+place haunted:"your trapped inside a haunted house"
+place grave_yard:"you are in a grave yard"
+place kitchen:"you see a dead body"
+
+haunted.path grave_yard:"go to the graveyard", kitchen:"go to the kitchen"
+grave_yard.path haunted:"back"
+kitchen.path haunted:"back"
+  
+image kitchen:"http://farm4.static.flickr.com/3357/3425176190_2245830919.jpg"
