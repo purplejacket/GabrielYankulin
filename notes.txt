@@ -1,0 +1,6 @@
+gem uninstall pie
+gem install pie (sudo gem install pie)
+git clone git@github.com:purplejacket/GabrielYankulin.git
+rb - pie
+pie house.pie = runs pie
+http://localhost:31415
